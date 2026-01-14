@@ -47,6 +47,12 @@ return {
                     },
                 },
             })
+            vim.lsp.config('qmlls', {
+                cmd = {
+                    "qmlls",
+                    "-E"
+                },
+            })
             require("mason").setup(
                 {
                     registries = {
