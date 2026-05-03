@@ -68,7 +68,7 @@ return {
                     --"omnisharp",
                     "csharpier",
                     --"stylua",
-                    "roslyn",
+                    --"roslyn",
                 }
             })
 

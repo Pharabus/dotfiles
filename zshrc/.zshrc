@@ -114,3 +114,7 @@ alias vim="nvim"
 
 # Created by `pipx` on 2025-12-30 13:29:31
 export PATH="$PATH:/home/andrew/.local/bin"
+
+# Added by get-aspire-cli.sh
+export PATH="$HOME/.aspire/bin:$PATH"
+
