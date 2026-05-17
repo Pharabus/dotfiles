@@ -2,9 +2,10 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-family: "FiraCode Nerd Font", "FiraCode Nerd Font Mono", monospace;
     font-size: 20px;
     min-height: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 window#waybar {
@@ -42,11 +43,13 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 6px;
+    min-width: 18px;
     background-color: transparent;
-    color: #ebdbb2;
+    color: #928374;
     border-radius: 3px;
     margin: 2px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #workspaces button:hover {
@@ -55,8 +58,12 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    background-color: #98971a;
+    padding: 0 18px;
+    background-color: #d79921;
     color: #282828;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: inset 0 -3px 0 #b57614;
 }
 
 #workspaces button.focused {
@@ -100,27 +107,30 @@ window#waybar.hidden {
 #clock {
     background-color: #665c54;
     color: #ebdbb2;
-    padding: 0 10px;
+    padding: 0 14px;
     margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(102, 92, 84, 0.6);
 }
 
 /* CPU */
 #cpu {
     background-color: #cc241d;
     color: #ebdbb2;
-    padding: 0 10px;
+    padding: 0 14px;
     margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(204, 36, 29, 0.6);
 }
 
 /* Memory */
 #memory {
     background-color: #d65d0e;
     color: #ebdbb2;
-    padding: 0 10px;
+    padding: 0 14px;
     margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(214, 93, 14, 0.6);
 }
 
 /* Temperature */
@@ -171,23 +181,26 @@ window#waybar.hidden {
 #network {
     background-color: #458588;
     color: #ebdbb2;
-    padding: 0 10px;
+    padding: 0 14px;
     margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(69, 133, 136, 0.6);
 }
 
 #network.disconnected {
     background-color: #fb4934;
     color: #ebdbb2;
+    box-shadow: 0 0 8px rgba(251, 73, 52, 0.6);
 }
 
 /* Pulseaudio */
 #pulseaudio {
     background-color: #b16286;
     color: #ebdbb2;
-    padding: 0 10px;
+    padding: 0 14px;
     margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(177, 98, 134, 0.6);
 }
 
 #pulseaudio.muted {
