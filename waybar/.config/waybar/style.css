@@ -208,6 +208,16 @@ window#waybar.hidden {
     color: #ebdbb2;
 }
 
+/* Notification */
+#custom-notification {
+    background-color: #8ec07c;
+    color: #282828;
+    padding: 0 14px;
+    margin: 0 5px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px rgba(142, 192, 124, 0.6);
+}
+
 /* Tray */
 #tray {
     background-color: #3c3836;
