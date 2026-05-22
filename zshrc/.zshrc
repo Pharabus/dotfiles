@@ -111,10 +111,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias vim="nvim"
 
+# Machine-specific overrides (not tracked in git)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-# Created by `pipx` on 2025-12-30 13:29:31
-export PATH="$PATH:/home/andrew/.local/bin"
 
-# Added by get-aspire-cli.sh
-export PATH="$HOME/.aspire/bin:$PATH"
 
