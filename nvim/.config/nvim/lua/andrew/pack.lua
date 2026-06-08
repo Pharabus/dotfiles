@@ -52,7 +52,10 @@ vim.pack.add({
     'https://github.com/christoomey/vim-tmux-navigator',
 
     -- git
-    'https://github.com/tpope/vim-fugitive',
+    'https://github.com/lewis6991/gitsigns.nvim',
+    'https://github.com/sindrets/diffview.nvim',
+    'https://github.com/NeogitOrg/neogit',
+    'https://github.com/linrongbin16/gitlinker.nvim',
 
     -- syntax & formatting
     'https://github.com/nvim-treesitter/nvim-treesitter',
@@ -71,7 +74,10 @@ require("andrew.config.dap")
 require("andrew.config.telescope")
 require("andrew.config.treesitter")
 require("andrew.config.harpoon")
-require("andrew.config.fugitive")
+require("andrew.config.gitsigns")
+require("andrew.config.diffview")
+require("andrew.config.neogit")
+require("andrew.config.gitlinker")
 require("andrew.config.formatting")
 require("andrew.config.trouble")
 require("andrew.config.undotree")
