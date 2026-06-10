@@ -66,6 +66,9 @@ vim.pack.add({
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/folke/trouble.nvim',
     'https://github.com/mbbill/undotree',
+
+    -- markdown
+    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
 require("andrew.config.colours")
@@ -83,3 +86,4 @@ require("andrew.config.trouble")
 require("andrew.config.undotree")
 require("andrew.config.snippets")
 require("andrew.config.lualine")
+require("andrew.config.render-markdown")
