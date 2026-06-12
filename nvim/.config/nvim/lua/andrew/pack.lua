@@ -12,6 +12,11 @@ vim.api.nvim_create_autocmd('PackChanged', {
         if name == 'LuaSnip' then
             vim.system({ 'make', 'install_jsregexp' }, { cwd = ev.data.path })
         end
+
+        if name == 'fff.nvim' and (kind == 'install' or kind == 'update') then
+            if not ev.data.active then vim.cmd.packadd('fff.nvim') end
+            require('fff.download').download_or_build_binary()
+        end
     end,
 })
 
@@ -43,6 +48,7 @@ vim.pack.add({
 
     -- navigation & search
     'https://github.com/nvim-telescope/telescope.nvim',
+    'https://github.com/dmtrKovalenko/fff.nvim',
     { src = 'https://github.com/ThePrimeagen/harpoon', version = 'harpoon2' },
     'https://github.com/nvim-lua/plenary.nvim',
     'https://github.com/christoomey/vim-tmux-navigator',
@@ -71,6 +77,7 @@ require("andrew.config.colours")
 require("andrew.config.lsp")
 require("andrew.config.dap")
 require("andrew.config.telescope")
+require("andrew.config.fff")
 require("andrew.config.treesitter")
 require("andrew.config.harpoon")
 require("andrew.config.gitsigns")
