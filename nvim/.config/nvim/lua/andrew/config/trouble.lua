@@ -1,5 +1,4 @@
 require("trouble").setup({
-    icons = false,
     modes = {
         diagnostics = {
             filter = function(items)
@@ -12,7 +11,7 @@ require("trouble").setup({
 })
 
 vim.keymap.set("n", "<leader>tt", function()
-    require("trouble").toggle()
+    require("trouble").toggle("diagnostics")
 end)
 
 vim.keymap.set("n", "[t", function()

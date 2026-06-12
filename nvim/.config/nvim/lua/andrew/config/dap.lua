@@ -5,6 +5,12 @@ require("dapui").setup()
 require("dap-go").setup()
 require("nvim-dap-virtual-text").setup()
 
+require("mason-nvim-dap").setup({
+    ensure_installed = { "python" },
+    automatic_installation = true,
+})
+require("dap-python").setup(vim.fn.expand("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"))
+
 require('dap-cs').setup({
     dap_configurations = {
         {
