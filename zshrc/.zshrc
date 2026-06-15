@@ -3,6 +3,9 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+# Keep PATH entries unique so re-sourcing this file doesn't duplicate them.
+typeset -U path
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:/usr/share/dotnet
 
@@ -11,8 +14,6 @@ export PATH=$PATH:/usr/share/dotnet
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/themes
 ZSH_THEME="agnoster"
-#VZSH_THEME="gruvbox"
-SOLARIZED_THEME="dark"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,12 +75,23 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-completions web-search zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#83a598,standout"
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+# Truncate agnoster's path segment: once 4+ dirs deep, show …/ + last 3 dirs.
+# Keeps deep paths from eating most of the prompt width.
+prompt_dir() {
+  prompt_segment blue $CURRENT_FG '%(4~|…/%3~|%~)'
+}
+
+# History behaviour
+setopt HIST_IGNORE_ALL_DUPS  # drop older duplicate commands from history
+setopt SHARE_HISTORY         # share history live across open shells
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -106,9 +118,18 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Lazy-load nvm: sourcing nvm.sh on every shell start is slow, so defer it
+# until the first time nvm/node/npm/npx is actually invoked.
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+_load_nvm() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm()  { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm()  { _load_nvm; npm "$@"; }
+npx()  { _load_nvm; npx "$@"; }
 alias vim="nvim"
 
 # Machine-specific overrides (not tracked in git)
