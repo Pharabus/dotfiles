@@ -5,8 +5,6 @@ local capabilities = vim.tbl_deep_extend(
     require("blink.cmp").get_lsp_capabilities()
 )
 
-require("fidget").setup({})
-
 vim.lsp.config('*', { capabilities = capabilities })
 
 vim.lsp.config('roslyn', {

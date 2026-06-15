@@ -32,7 +32,6 @@ vim.pack.add({
     'https://github.com/williamboman/mason-lspconfig.nvim',
     { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('1.x') },
     { src = 'https://github.com/L3MON4D3/LuaSnip', version = vim.version.range('2.x') },
-    'https://github.com/j-hui/fidget.nvim',
     'https://github.com/seblyng/roslyn.nvim',
     'https://github.com/rafamadriz/friendly-snippets',
 
@@ -73,6 +72,7 @@ vim.pack.add({
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
+require("andrew.config.ui")
 require("andrew.config.colours")
 require("andrew.config.lsp")
 require("andrew.config.dap")
