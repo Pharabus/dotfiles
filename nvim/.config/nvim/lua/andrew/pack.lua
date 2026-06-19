@@ -9,10 +9,6 @@ vim.api.nvim_create_autocmd('PackChanged', {
             vim.cmd('TSUpdate')
         end
 
-        if name == 'LuaSnip' then
-            vim.system({ 'make', 'install_jsregexp' }, { cwd = ev.data.path })
-        end
-
         if name == 'fff.nvim' and (kind == 'install' or kind == 'update') then
             if not ev.data.active then vim.cmd.packadd('fff.nvim') end
             require('fff.download').download_or_build_binary()
@@ -31,7 +27,6 @@ vim.pack.add({
     'https://github.com/williamboman/mason.nvim',
     'https://github.com/williamboman/mason-lspconfig.nvim',
     { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('1.x') },
-    { src = 'https://github.com/L3MON4D3/LuaSnip', version = vim.version.range('2.x') },
     'https://github.com/seblyng/roslyn.nvim',
     'https://github.com/rafamadriz/friendly-snippets',
 

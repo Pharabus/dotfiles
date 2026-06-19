@@ -62,9 +62,8 @@ require("blink.cmp").setup({
         preset = "default",
         ["<C-y>"] = { "select_and_accept" },
     },
-    snippets = { preset = "luasnip" },
     sources = {
-        default = { "lsp", "luasnip", "buffer" },
+        default = { "lsp", "snippets", "buffer" },
     },
     cmdline = {
         keymap = { preset = "cmdline" },
