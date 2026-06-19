@@ -6,6 +6,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("obsidian").setup({
+    daily_notes = {
+        folder = "DailyNotes",
+    },
     workspaces = {
         {
             name = "no-hierarchical-vault",
