@@ -8,3 +8,12 @@ require("obsidian").setup({
         },
     },
 })
+
+vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>")
+vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>")
+vim.keymap.set("n", "<leader>os", "<cmd>ObsidianQuickSwitch<CR>")
+vim.keymap.set("n", "<leader>of", "<cmd>ObsidianSearch<CR>")
+vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>")
+vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<CR>")
+vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>")
+vim.keymap.set("n", "<leader>or", "<cmd>ObsidianRename<CR>")
