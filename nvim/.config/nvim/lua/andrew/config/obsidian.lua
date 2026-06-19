@@ -1,3 +1,10 @@
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.conceallevel = 2
+    end,
+})
+
 require("obsidian").setup({
     workspaces = {
         {
