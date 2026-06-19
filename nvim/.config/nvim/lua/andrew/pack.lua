@@ -65,6 +65,7 @@ vim.pack.add({
 
     -- markdown
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+    'https://github.com/epwalsh/obsidian.nvim',
 })
 
 require("andrew.config.ui")
@@ -85,3 +86,4 @@ require("andrew.config.undotree")
 require("andrew.config.snippets")
 require("andrew.config.lualine")
 require("andrew.config.render-markdown")
+require("andrew.config.obsidian")
