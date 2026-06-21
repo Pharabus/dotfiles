@@ -118,18 +118,6 @@ setopt SHARE_HISTORY         # share history live across open shells
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Lazy-load nvm: sourcing nvm.sh on every shell start is slow, so defer it
-# until the first time nvm/node/npm/npx is actually invoked.
-export NVM_DIR="$HOME/.nvm"
-_load_nvm() {
-  unset -f nvm node npm npx
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-}
-nvm()  { _load_nvm; nvm "$@"; }
-node() { _load_nvm; node "$@"; }
-npm()  { _load_nvm; npm "$@"; }
-npx()  { _load_nvm; npx "$@"; }
 alias vim="nvim"
 
 # Machine-specific overrides (not tracked in git)
