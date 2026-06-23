@@ -5,6 +5,10 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+if not vim.fs.root(0, ".obsidian") then
+    return
+end
+
 require("obsidian").setup({
     daily_notes = {
         folder = "DailyNotes",
@@ -13,7 +17,7 @@ require("obsidian").setup({
         {
             name = "no-hierarchical-vault",
             path = function()
-                return assert(vim.fs.root(0, ".obsidian"), "Not in an Obsidian vault")
+                return assert(vim.fs.root(0, ".obsidian"))
             end,
         },
     },
